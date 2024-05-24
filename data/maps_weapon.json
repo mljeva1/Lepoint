@@ -1,0 +1,50 @@
+{
+    "maps": [
+                {
+                    "mapMatch": "bind"
+                },
+                {
+                    "mapMatch": "haven"
+                },
+                {
+                    "mapMatch": "split"
+                },
+                {
+                    "mapMatch": "ascent"
+                },
+                {
+                    "mapMatch": "icebox"
+                },
+                {
+                    "mapMatch": "breeze"
+                },
+                {
+                    "mapMatch": "fracture"
+                },
+                {
+                    "mapMatch": "pearl"
+                },
+                {
+                    "mapMatch": "lotus"
+                },
+                {
+                    "mapMatch": "sunset",
+                    "comment": "ispod pocinje za deathmatch"
+                },
+                {
+                    "mapMatch": "district"
+                },
+                {
+                    "mapMatch": "kasbah"
+                },
+                {
+                    "mapMatch": "piazza"
+                },
+                {
+                    "mapMatch": "drift"
+                }
+            ],
+    "agents": [
+        
+    ]
+}

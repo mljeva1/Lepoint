@@ -1,0 +1,514 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Pixelify+Sans:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* unutar index.html */
+html {
+    scroll-behavior: smooth;
+  }
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;   
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    background-color: #39086B;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+.alert-error {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 25px;
+    color: rgb(211, 145, 83);
+}
+.glavno {
+    width: 100%;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 !important;    
+    min-height: 100%
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    height: 45px;
+    border-bottom: 1.5px solid #cecfc7;
+    width: 100%;
+
+    /* From https://css.glass */
+    background: rgba(66, 57, 93, 0.6);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 20;
+    position: sticky;
+    top: 0;
+    padding-left: 5vh;
+}
+#graf-button {
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+    color: wheat;
+    transition: 0.5s all ease-in-out;
+    position: absolute;
+    top: 1.5vh;
+    right: 10vh;
+    display: none;
+}
+.graf-button:hover {
+    color: red;
+}
+.header img {
+    max-height: 40px;
+    max-width: 40px;
+    margin-right: 30px;   
+    margin-left: 20px;
+    border-radius: 30px;
+    opacity: 0.9;
+}
+.header h1 {
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    color: #cecfc7;
+    cursor: default;
+}
+.back-video {
+    z-index: -8;
+    background: rgba(66, 57, 93, 0.6);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.back-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    z-index: -10;
+    top: 0;
+    right: 0;
+    filter: blur(2px);
+    opacity: 0.8;
+    margin: 0;
+    padding: 0;
+}
+.tekst {
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    color: #cecfc7;
+    cursor: default;
+    letter-spacing: 5px;
+    font-size: 50px;
+    width: auto;
+    text-align: center;
+    margin: 50px;
+    padding: 10px;
+    background: rgba(153, 132, 212, 0);
+    border-radius: 25PX;
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    text-shadow: 0px 2px 8px #39086B;
+    background-color: rgba(255, 255, 255, 0);
+    z-index: -2;
+}
+.search-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    width: 100%;
+    height: 5vh;
+}
+.search-container input {
+    text-align: center;
+    color: black;
+    height: 3.1vh;
+    border: none;
+    text-decoration: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#server-select {
+    height: 3.4vh;
+    outline: none;
+    border: none;
+    border-left: 2px solid black;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+#playerSearch {
+    border-right: 2px solid black;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+#searchButton {
+    border-radius: 20px;
+    width: 10vh;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    outline: none;
+    border: none;
+    transition: all 0.5s ease-out;
+    margin-bottom: 10vh;
+}
+#searchButton:hover {
+    background-color: #39086B;
+    color: whitesmoke;
+}
+.search-result {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 70%;
+}
+
+
+/*Greška*/
+.prazno {
+    color: red;
+}
+
+/* Generalne statistike */
+.playerName-container {
+    width: 100%;
+    padding: 0;
+    padding-left: 5vh;
+    padding-bottom: 1vh;
+    background: rgba(66, 57, 93, 0.6);
+    border-radius: 23px;
+    margin-bottom: 2vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+.playerName {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 2px;
+    color: whitesmoke;
+    width: 40%;
+}
+.lepoint-result {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 2px;
+    color: whitesmoke;
+    font-size: 25px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: calc(100% - 50%);
+}
+.lepoint-result p {
+    margin: 0;
+    padding: 0;
+}
+.player-slika {
+    width: calc(100% - 60%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border-top: 3px solid wheat;
+}
+.player-slika img {
+    object-fit: contain;
+    width: 100%;
+    margin-right: 5vh;
+    transform: translateY(4vh);
+    image-rendering: optimizeQuality;
+    opacity: 0.95;
+}
+.overall-stats {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 2px;
+    color: whitesmoke;
+    width: 50%;
+    font-size: 15px;
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    line-height: 0px;
+    text-align: justify;
+    transition: all 0.5s ease-out;
+    border-left: 3px solid wheat;
+    border-top: 3px solid wheat;
+    padding-left: 5px;
+}
+.overall-stats p {
+    width: 100%;
+}
+.player-span {
+    font-size: 16px;
+    color: rgb(247, 220, 112);
+    font-weight: 600;
+    display: flex;
+    justify-content: end;
+}
+.skriveno {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 2px;
+    color: whitesmoke;
+    width: 100%;
+    max-height: 0;
+    font-size: 15px;
+    display: none;
+    align-items: start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    line-height: 0px;
+    text-align: justify;
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
+}
+.more-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#player-extend {
+    border-radius: 20px;
+    width: 20vh;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    outline: none;
+    border: none;
+    transition: all 0.5s ease-out;
+}
+.playerNameBitke {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 2px;
+    color: wheat;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    text-shadow: 0px 2px 8px #39086B;
+}
+
+
+
+/* Jedna po jedna bitka */
+.bitke {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    background: rgba(66, 57, 93, 0.7);
+    border-radius: 20px;
+    color: white;
+    flex-direction: column;
+    margin: 0;
+    margin-bottom: 25px;
+    width: 100%;
+    padding: 20px;
+    padding-top: 0;
+    padding-right: 0;
+    z-index: 2;
+}
+.bitke-gore {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.mapa-container {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: flex-start;
+}
+.mapa {
+    width: auto;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 2px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+}
+.displayMapa {
+    color: rgb(247, 220, 112);
+    font-weight: 700;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slikamape {
+    width: 30vh;
+    height: 30vh;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 1px solid wheat;
+    display: flex;
+    justify-content: center;
+    margin-left: 4vh;
+    margin-bottom: 2vh;
+}
+.slika-weapon {
+    margin-right: 15px;
+    image-rendering: optimizeQuality;
+}
+.player-agent {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.mvp {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 23px;
+    font-style: normal;
+    margin: 0;
+    margin-bottom: -10vh;
+    z-index: 100;
+    width: 10%;
+    background: rgba(92, 75, 153, 0.8);
+    text-align: center;
+    border-radius: 15px;
+}
+.player-agent img {
+    width: 100%;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    opacity: 0.85;
+    object-position: center;
+    image-rendering: optimizeQuality;
+}
+.ispod-slike {
+    display: flex;
+    width: 100%;
+    object-fit: cover;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    flex-direction: row;
+    line-height: 1px;
+    margin-left: 5vh;
+    flex-wrap: wrap;
+}
+.ispod-slike p {
+    width: 40%;
+    font-size: 17px;
+}
+.kda, .result {
+    display: flex;
+    flex-direction: row;
+}
+.lepoint {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 22px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    margin-top: 3vh;
+}
+.player-rezultat {
+    display: flex;
+    width: 100%;
+    justify-content: start;
+    flex-wrap: wrap;
+    margin-top: 2vh;
+    background: transparent;
+}
+#lepoint-value {
+    font-weight: 700;
+}
+.grafovi {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0;
+    flex-direction: row;
+    margin-bottom: 4vh;
+    margin-top: 4vh;
+}
+.broj-bitke {
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: wheat;
+    text-align: center;
+    font-size: 23px;
+    margin-bottom: -1.5vh;
+}
+
+/* Footer */
+footer {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    text-align: center;
+    color: wheat;
+    z-index: 55;
+    background: rgba(92, 75, 153, 0.5);
+    width: 100%;
+    min-width: 100%;
+    margin: 0;
+    margin-top: 2vh;
+}
+#footer-bottom {
+    position: absolute;
+    bottom: 0;
+}
